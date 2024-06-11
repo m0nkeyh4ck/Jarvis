@@ -2,6 +2,6 @@
 
 int main() {
     // Ejecuta el programa en una nueva terminal
-    system("xterm -hold -e '../jarvis'");
+    system("xterm -e '../jarvis'");
     return 0;
 }
