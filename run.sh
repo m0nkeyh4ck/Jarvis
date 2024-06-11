@@ -25,6 +25,6 @@ fi
 
 # Compilar y ejecutar el programa
 cd  ./scripts
-gcc -o jarvis brain.c chat.c hola.c jarvis.c ping.c mkdir.c
+gcc -o jarvis brain.c chat.c hola.c jarvis.c ping.c mkdir.c find.c
 xterm -e './jarvis' 2>/dev/null & disown
 cd ..
