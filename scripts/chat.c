@@ -10,6 +10,7 @@ void clear_screen() {
 }
 
 void chat() {
+    system("sleep 1 && wmctrl -r :ACTIVE: -b add,above");
     char input[100];
 
     while (1) {
@@ -24,6 +25,7 @@ void chat() {
         input[strcspn(input, "\n")] = 0; // Eliminar el carácter de nueva línea
         clear_screen();
         if (strcmp(input, "3") == 0 || strcmp(input, "Salir") == 0 || strcmp(input, "salir") == 0) {
+            system("wmctrl -r :ACTIVE: -b remove,above");
             break;
         }
 
