@@ -15,4 +15,3 @@ void execute_command(const char *command) {
         printf("Comando desconocido: %s\n", command);
     }
 }
-

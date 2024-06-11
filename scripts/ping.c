@@ -17,3 +17,11 @@ void do_ping(const char *ip_address) {
         printf("Error al ejecutar el comando: %s\n", strerror(errno));
     }
 }
+
+void request_and_ping() {
+    char ip_address[16];
+    printf("Introduce la dirección IP: ");
+    fgets(ip_address, sizeof(ip_address), stdin);
+    ip_address[strcspn(ip_address, "\n")] = 0; // Eliminar el carácter de nueva línea
+    do_ping(ip_address);
+}
