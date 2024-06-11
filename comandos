@@ -1,0 +1,4 @@
+#para activar y desactivar que la terminal siempre este encima
+
+xterm -hold -e "wmctrl -r :ACTIVE: -b add,above"
+wmctrl -r :ACTIVE: -b remove,above
