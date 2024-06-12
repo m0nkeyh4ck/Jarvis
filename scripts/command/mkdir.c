@@ -4,6 +4,7 @@
 #include <time.h> // Para obtener la fecha y hora actual
 #include "../brain/brain.h"
 
+
 #define MAX_CARPETAS 10
 #define MAX_NOMBRE 50
 #define MAX_RUTA 100
