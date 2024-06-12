@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Verificar si GCC está instalado
-if command -v gcc &> /dev/null
+if command -v wmctrl &> /dev/null
 then
-    echo "GCC ya está instalado en el sistema."
+    echo "ejecution exitosa"
 else
     # Detectar la distribución actual
     distro=$(awk -F= '$1=="ID" {print $2}' /etc/os-release)
@@ -26,5 +26,5 @@ fi
 # Compilar y ejecutar el programa
 cd  ./scripts
 gcc -o jarvis brain/brain.c int/chat.c out/hola.c jarvis.c command/ping.c command/mkdir.c command/find.c int/mirar.c
-xterm -e 'rlwrap ./jarvis' 2>/dev/null & disown
+xterm -geometry 100x13+1300+0 -e 'rlwrap ./jarvis' 2>/dev/null & disown
 cd ..

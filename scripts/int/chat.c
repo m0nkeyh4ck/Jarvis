@@ -13,14 +13,15 @@ void clear_screen() {
 //funcion menu en el sistema
 void show_menu() {
     printf("\nHola Monkey\n¿Qué vas a hacer?\n\n");
-    printf("1) Imprimir un 'Hola, mundo'\n");
-    printf("2) Hacer ping a una dirección IP\n");
-    printf("3) Crear carpeta\n");
-    printf("4) Buscar\n");
+    printf("1) Jugar en Hck The Box\n");
+    printf("2) Jugar en Try Hack Me\n");
+    printf("3) Jugar en Hack My VM\n");
+    printf("4) Solo estar en casa\n");
     printf("5) Salir\n");
+    
 }
 
 void chat(){
-    mirar_archivo();
+    mirar_archivo(); //funcion mirar.c
 }
 

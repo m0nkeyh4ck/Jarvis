@@ -6,5 +6,5 @@
 
 void execute_command() {
     //char input1[100]; // Declaración de la variable para almacenar la entrada del usuario
-    printf("listo, todo en orde");
+    printf("listo, todo en orden");
 }
