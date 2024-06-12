@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h> // Incluir errno.h para strerror
-#include "brain.h"
+#include "../brain/brain.h"
 
 void do_ping(const char *ip_address) {
     char command[100];

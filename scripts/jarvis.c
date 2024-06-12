@@ -1,5 +1,5 @@
 // jarvis.c
-#include "brain.h"
+#include "brain/brain.h"
 
 int main() {
     chat();

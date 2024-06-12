@@ -3,6 +3,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <dirent.h>
+#include "../brain/brain.h"
 
 #define MAX_PATH_LEN 1024
 #define MAX_NAME_LEN 256

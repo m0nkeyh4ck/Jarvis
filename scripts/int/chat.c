@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h> // Para usleep()
 #include <stdlib.h> // Para system()
-#include "brain.h"
+#include "../brain/brain.h"
 
 int wait_time = 4000000; // Variable global para el tiempo de espera en microsegundos
 

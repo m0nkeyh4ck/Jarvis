@@ -12,7 +12,7 @@ else
     case "$distro" in
         debian|ubuntu|parrot)
             sudo apt update
-            sudo apt install -y gcc
+            sudo apt install -y gcc wmctrl rlwrap
             ;;
         arch)
             sudo pacman -Syu --noconfirm gcc
@@ -25,6 +25,6 @@ fi
 
 # Compilar y ejecutar el programa
 cd  ./scripts
-gcc -o jarvis brain.c chat.c hola.c jarvis.c ping.c mkdir.c find.c
-xterm -e './jarvis' 2>/dev/null & disown
+gcc -o jarvis brain/brain.c int/chat.c out/hola.c jarvis.c command/ping.c command/mkdir.c command/find.c 
+xterm -e 'rlwrap ./jarvis' 2>/dev/null & disown
 cd ..

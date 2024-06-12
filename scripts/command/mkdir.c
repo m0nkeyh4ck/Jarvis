@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h> // Para obtener la fecha y hora actual
-#include "brain.h"
+#include "../brain/brain.h"
 
 #define MAX_CARPETAS 10
 #define MAX_NOMBRE 50
