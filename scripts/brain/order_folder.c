@@ -12,13 +12,17 @@
 
 // Función para eliminar un directorio y su contenido recursivamente
 int eliminarDirectorioRecursivo(const char *path) {
+    
+    
     DIR *dir = opendir(path);
     struct dirent *entry;
 
+    //valida si se puede abrir el directorio
     if (dir == NULL) {
         perror("Error al abrir directorio");
         return 0; // Fracaso
     }
+
 
     while ((entry = readdir(dir)) != NULL) {
         // Ignorar las entradas "." y ".."
@@ -79,9 +83,7 @@ int crearDirectorio(const char *path) {
 // Función para crear directorios con subdirectorios
 void crearDirectorios(const char *directorioRaiz) {
     // Crear el directorio raíz
-    if (crearDirectorio(directorioRaiz)) {
-        printf("\t\t\t\t\t1) listo\n");
-    }
+    crearDirectorio(directorioRaiz);   
 }
 
 

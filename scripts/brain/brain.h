@@ -4,7 +4,7 @@
 
 
 // de definen las funcionan  para que sean vistas desde cualquier parte
-void execute_command(); // ejecuta la funcion de brain.c
+void validation_system_ok(); // ejecuta la funcion de brain.c
 void chat(); // funcion chat
 void mirar_archivo(const char *filename); //funcion mirar
 void clear_screen(); //funcion chat
@@ -15,7 +15,8 @@ void new_folder(); // funcion mkdir
 void find_all();//  funcion find
 void show_menu(); //funcion chat
 void crearDirectorios(const char *ip_address);
-void vaciarArchivo(const char *menu1);
+void new_file(const char *menu1);
+void action(char *command); //chat.c
 
 
 #endif // BRAIN_H

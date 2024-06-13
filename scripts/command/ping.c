@@ -24,11 +24,6 @@ void do_ping(const char *ip_address) {
     //int result = system(command);
     //printf("\n"); // Salto de línea
 
-
-
-
-
-
     // Manejar el error si el comando ping falla
     if (ping_output == NULL) {
         printf("Error al ejecutar el comando: %s\n", strerror(errno));

@@ -21,7 +21,13 @@ void show_menu() {
     
 }
 
+
 void chat(const char *m1){
-    mirar_archivo(m1); //funcion mirar.c
+    
+    while(1) {
+        clear_screen();
+        show_menu();
+        mirar_archivo(m1); //funcion mirar.c
+    }
 }
 
