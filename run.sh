@@ -25,6 +25,6 @@ fi
 
 # Compilar y ejecutar el programa
 cd  ./scripts
-gcc -o jarvis brain/brain.c int/chat.c out/hola.c jarvis.c command/ping.c command/mkdir.c command/find.c int/mirar.c
-xterm -geometry 100x13+1300+0 -e 'rlwrap ./jarvis' 2>/dev/null & disown
+gcc -o jarvis brain/brain.c int/chat1.c out/hola.c jarvis.c command/ping.c command/mkdir.c command/find.c int/mirar.c  brain/order_file.c brain/order_folder.c
+xterm -geometry 114x12+1230+0 -e 'rlwrap ./jarvis' 2>/dev/null & disown
 cd ..

@@ -2,23 +2,17 @@
 #include <unistd.h> // Para sleep
 #include <string.h> // Para strcmp
 #include <stdlib.h> // Para system
-#include "../brain/brain.h"
+#include "../brain/brain.h" // Cambia esto por la ruta correcta de tu archivo de cabecera
 
 
-#define FILENAME "mirar.txt"
 int wait_time = 4000000; // Variable global para el tiempo de espera en microsegundos
-// Variable para controlar el bucle
 
 
-// Función para vaciar el archivo
-void vaciarArchivo() {
-    FILE *file = fopen(FILENAME, "w");
-    fclose(file);
-}
-
+// Función para realizar una acción basada en el comando leído
 void action(char *command) {
     if (strcmp(command, "Salir") == 0 || strcmp(command, "salir") == 0 || strcmp(command, "5") == 0) {
         system("wmctrl -r :ACTIVE: -b remove,above");
+		system("tput cnorm");
         exit(EXIT_SUCCESS);
     } else if (strcmp(command, "1") == 0) {
         say_hello();
@@ -33,23 +27,30 @@ void action(char *command) {
     }
 }
 
-void mirar_archivo() {
+// Función para monitorear un archivo y realizar acciones basadas en su contenido
+void mirar_archivo(const char *filename) {
     // Verificar si el archivo existe
-    if (access(FILENAME, F_OK) != -1) {
+    if (access(filename, F_OK) != -1) {
         // El archivo existe, vaciarlo
-        vaciarArchivo();
+        vaciarArchivo(filename);
     } else {
         // El archivo no existe, crearlo
-        FILE *file = fopen(FILENAME, "w");
-        fclose(file);
+        FILE *file = fopen(filename, "w");
+        if (file != NULL) {
+            fclose(file);
+            printf("Archivo %s creado correctamente\n", filename);
+        } else {
+            perror("Error al crear archivo");
+            return;
+        }
     }
 
-    while(1){
+    while(1) {
         clear_screen();
         show_menu();
         while (1) {
             // Leer el archivo
-            FILE *file = fopen(FILENAME, "r");
+            FILE *file = fopen(filename, "r");
             if (file != NULL) {
                 char line[10]; // Tamaño suficiente para "si" o "no"
                 // Leer una línea del archivo
@@ -58,10 +59,9 @@ void mirar_archivo() {
                     line[strcspn(line, "\n")] = '\0';
                     clear_screen();
                     action(line);
-                    
                     fclose(file);
                     // Vaciar el archivo después de cada ejecución
-                    vaciarArchivo();
+                    vaciarArchivo(filename);
                     usleep(wait_time);
                     break;
                 }
