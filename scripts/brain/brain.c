@@ -5,45 +5,53 @@
 #include "brain.h"
 #include <unistd.h> // Para sleep
 
+char *rutaraiz = "/dev/shm/.data";
+char *info_menu = "/dev/shm/.data/info_menu";
+char *m = "/dev/shm/.data/info_menu/m.txt";
+char *m1 = "/dev/shm/.data/info_menu/m_home.txt";
+char *m2 = "/dev/shm/.data/info_menu/m2.txt";
 
 // funion que se usa para validar que todo funiona, tambien crea lo archivos de trabajo
-void validation_system_ok(const char *filename1, const char *rutaraiz) {
+void validation_system_ok() {
 
     //oculta el cursor
     system("tput civis");
     //hace que la pantalla siempre quede delante
     system("sleep 1 && wmctrl -r :ACTIVE: -b add,above");
     
-
     //crea la carpera y los archivos base
     crearDirectorios(rutaraiz); //funion order folder
-    new_file(filename1); // funcion orde file
+    crearDirectorios(info_menu); //funion order folder
+     // funcion orde file
+    //new_file(m1); // funcion orde file
 
-    printf("OK!");
+    //printf("OK!");
+
 }
 
 //...........................................................................
 
 void opt_1(){
     clear_screen();
-    printf("\n\nEste es para hackear Hack the box\n\n");
+    //printf("\n\nEste es para hackear Hack the box\n\n");
     usleep(1000000);
 }
 
 void opt_2(){
     clear_screen();
-    printf("\n\nEste es para hackear try hck m,e\n\n");
+    request_and_ping();
+    //printf("\n\nEste es para hackear try hck m,e\n\n");
     usleep(1000000);
 }
 
 void opt_3(){
     clear_screen();
-    printf("\n\nEste es para hackear hack my vm\n\n");
+    //printf("\n\nEste es para hackear hack my vm\n\n");
     usleep(1000000);
 }
 
 void opt_4(){
-    printf("Comando no reconocido: 4");
+    chat_home();
 }
 
 void opt_salir(){
@@ -51,9 +59,6 @@ void opt_salir(){
 	system("tput cnorm");
     exit(EXIT_SUCCESS);
 }
-
-
-
 
 // Función para realizar una acción basada en el comando leído
 void action(char *command) {

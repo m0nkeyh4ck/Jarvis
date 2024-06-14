@@ -12,7 +12,7 @@ else
     case "$distro" in
         debian|ubuntu|parrot)
             sudo apt update
-            sudo apt install -y gcc wmctrl rlwrap inotify-tools
+            sudo apt install -y gcc wmctrl xterm rlwrap inotify-tools &> /dev/null
             ;;
         arch)
             sudo pacman -Syu --noconfirm gcc

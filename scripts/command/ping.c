@@ -8,7 +8,7 @@
 
 void do_ping(const char *ip_address) {
     
-        // Crear el comando de ping
+    // Crear el comando de ping
     char command[100];
     snprintf(command, sizeof(command), "/usr/bin/ping -c 1 %s", ip_address);
 
@@ -63,14 +63,6 @@ void do_ping(const char *ip_address) {
 }
 
 void request_and_ping() {
-    char ip_address[16];
-    printf("Introduce la dirección IP: ");
-    fgets(ip_address, sizeof(ip_address), stdin);
-    ip_address[strcspn(ip_address, "\n")] = 0; // Eliminar el carácter de nueva línea
-    do_ping(ip_address);
+    char ip_address[16] = "localhost"; //puede ser un calor por defecto
+    do_ping(ip_address); //llama a la funcion que hace el ping , y le pasa address
 }
-
-
-
-
-

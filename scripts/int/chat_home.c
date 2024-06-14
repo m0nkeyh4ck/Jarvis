@@ -6,24 +6,20 @@
 #include "../brain/brain.h"
 
 
-void clear_screen() {
-    system("clear"); // Limpia la pantalla
-}
-
 //funcion menu en el sistema
-void show_menu() {
+void show_menu_home() {
     printf("\n\t\t\t\t\tHola Monkey\n\t\t\t\t\t¿Qué vas a hacer?\n\n");
-    printf("\t\t\t\t\t1) Jugar en Hck The Box\n");
-    printf("\t\t\t\t\t2) Jugar en Try Hack Me\n");
-    printf("\t\t\t\t\t3) Jugar en Hack My VM\n");
-    printf("\t\t\t\t\t4) Solo estar en casa\n");
+    printf("\t\t\t\t\t1) Imprime hola mundo\n");
+    printf("\t\t\t\t\t2) hacer ping\n");
+    printf("\t\t\t\t\t3) crear carpetas\n");
+    printf("\t\t\t\t\t4) Buscar\n");
     printf("\t\t\t\t\t5) Salir\n");
 }
 
-void chat(){
+void chat_home(){
     while(1) {
         clear_screen();
-        show_menu();
+        show_menu_home();
         new_file(m);
         mirar_archivo(m); //funcion mirar.c
     }
